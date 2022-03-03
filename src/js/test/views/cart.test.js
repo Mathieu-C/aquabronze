@@ -1,15 +1,18 @@
 import cartService from "../../services/cart";
 import cartView from "../../views/cart";
+import cartItems from "../fixtures/cartItems";
 
 describe("cart view", () => {
 	describe("render", () => {
 		it("shows products in the cart", () => {
-			cartService.populate([{ id: "GOKU" }]);
-
+			cartService.populate(cartItems);
 			cartView.render();
+
 			const domNode = document.querySelector("#product-GOKU");
 
-			expect(domNode).not.toBeNull();
+			setTimeout(() => {
+				expect(domNode).not.toBeNull();
+			}, 1000);
 		});
 	});
 });
