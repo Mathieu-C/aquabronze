@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
 
-  <body>
-    <div id="root"></div>
-  </body>
+	<body>
+		<main class="page">
+			<section class="cart">
+				<h2>Shopping Cart</h2>
+				
+        <table class="products">
+          <thead>
+            <th class="products__heading">Product details</th>
+            <th class="products__heading">Quantity</th>
+            <th class="products__heading">Price</th>
+            <th class="products__heading">Total</th>
+          </thead>
+          <tbody id="js-cart-content"></tbody>
+        </table>
+			</section>
+			<aside class="summary">
+				<h2>Order Summary</h2>
+				<div class="summary__count" id="js-cart-summary"></div>
+				<ul class="discounts">
+          <h4 class="discounts__heading">Discounts</h4>
+          <div class="discounts__list" id="js-cart-discounts"></div>
+        </ul>
+				<p class="summary__total" id="js-cart-total"></p>
+        <button class="summary__checkout">Checkout</button>
+			</aside>
+		</main>
+	</body>
 </html>

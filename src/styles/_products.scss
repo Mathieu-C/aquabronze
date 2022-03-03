@@ -1,0 +1,13 @@
+.products {
+  border-top: 1.5px solid $grey;
+  padding-top: 3em;
+  width: 100%;
+
+  &__heading {
+    color: $grey-dark;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}

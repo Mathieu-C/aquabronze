@@ -1,26 +1,37 @@
-// Test import of a JavaScript module
-import { example } from '@/js/example'
+import cartService from "./js/services/cart";
 
-// Test import of an asset
-import webpackLogo from '@/images/webpack-logo.svg'
+import cartView from "./js/views/cart";
+import discountView from "./js/views/discount";
+import summaryView from "./js/views/summary";
 
 // Test import of styles
-import '@/styles/index.scss'
+import "./styles/index.scss";
 
-// Appending to the DOM
-const logo = document.createElement('img')
-logo.src = webpackLogo
+const products = [
+	{
+		discount: "twoForOne",
+		id: "GOKU",
+		name: "Goku POP",
+		price: 5,
+		quantity: 2,
+	},
+	{
+		discount: "bulk",
+		id: "NARU",
+		name: "Naruto POP",
+		price: 20,
+		quantity: 1,
+	},
+	{
+		id: "LUF",
+		name: "Luffy POP",
+		price: 7.5,
+		quantity: 1,
+	},
+];
 
-const heading = document.createElement('h1')
-heading.textContent = example()
+cartService.subscribe(cartView);
+cartService.subscribe(discountView);
+cartService.subscribe(summaryView);
 
-// Test a background image url in CSS
-const imageBackground = document.createElement('div')
-imageBackground.classList.add('image')
-
-// Test a public folder asset
-const imagePublic = document.createElement('img')
-imagePublic.src = '/assets/example.png'
-
-const app = document.querySelector('#root')
-app.append(logo, heading, imageBackground, imagePublic)
+cartService.populate(products);

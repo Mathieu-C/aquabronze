@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`summary view render reflects cart updates correctly in the cart total 1`] = `
+"
+      <span>Total cost</span>
+      <span class=\\"summary__total-net\\">32.5 €</span>
+    "
+`;
+
+exports[`summary view render reflects cart updates correctly in the summary 1`] = `
+"
+      <span>4 Items</span>
+      <span class=\\"summary__count-gross\\">37.5 €</span>
+    "
+`;
+
+exports[`summary view render renders the cart total 1`] = `
+"
+      <span>Total cost</span>
+      <span class=\\"summary__total-net\\">0 €</span>
+    "
+`;
+
+exports[`summary view render renders the summary 1`] = `
+"
+      <span>0 Items</span>
+      <span class=\\"summary__count-gross\\">0 €</span>
+    "
+`;
