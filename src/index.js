@@ -5,7 +5,7 @@ import discountView from "./js/views/discount";
 import summaryView from "./js/views/summary";
 
 // Test import of styles
-import "@/styles/index.scss";
+import "./styles/index.scss";
 
 const products = [
 	{
