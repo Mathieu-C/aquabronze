@@ -37,6 +37,14 @@ describe("cart service", () => {
 			cartService.populate(elements);
 			expect(cartService.getAll()).toEqual([{ id: "GOKU", name: "Goku" }]);
 		});
+
+		it("creates proxies of products", () => {
+			const elements = [{ id: "GOKU", name: "Goku" }];
+			cartService.populate(elements);
+
+			const element = cartService.get("GOKU");
+			expect(element._isProxy).toBe(true);
+		});
 	});
 
 	describe("get", () => {

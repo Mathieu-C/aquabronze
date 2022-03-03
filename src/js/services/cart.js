@@ -3,7 +3,12 @@ const cartService = (function() {
 
 	let items = [];
 
-	const proxyHandler = {	
+	const proxyHandler = {
+		get(target, prop, value) {
+			if (prop === "_isProxy") return true;
+			return Reflect.get(target, prop, value);
+		},
+
 		set(target, prop, value) {
       
 			if (prop === "quantity" && value === 0) {
