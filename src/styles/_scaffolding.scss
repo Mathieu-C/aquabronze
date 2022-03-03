@@ -35,6 +35,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 h1 {
   margin: 0 0 2rem;
 }
