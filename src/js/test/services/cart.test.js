@@ -1,11 +1,6 @@
 import cartService from "../../services/cart";
 import cartItems from "../fixtures/cartItems";
 
-beforeAll(() => {
-	// eslint-disable-next-line no-undef
-	global.confirm = jest.fn(() => true);
-});
-
 beforeEach(() => {
 	cartService.clear();
 });
@@ -100,10 +95,23 @@ describe("cart service", () => {
 
 	describe("remove", () => {
 		it("removes an item", () => {
-			cartService.populate([{ id: "GOKU", quantity: 1 }, { id: "NARU", quantity: 1 }]);
+			// eslint-disable-next-line no-undef
+			global.confirm = jest.fn(() => true);
+
+			cartService.populate([{ id: "NARU", quantity: 1 }]);
 			cartService.modifyQuantity("NARU", -1);
 
-			expect(cartService.getAll()).toEqual([{ id: "GOKU", quantity: 1 }]);
+			expect(cartService.getAll()).toEqual([]);
+		});
+
+		it("puts the item back to quantity 1 if prompt is cancelled", () => {
+			// eslint-disable-next-line no-undef
+			global.confirm = jest.fn(() => false);
+
+			cartService.populate([{ id: "NARU", quantity: 1 }]);
+			cartService.modifyQuantity("NARU", -1);
+
+			expect(cartService.getAll()).toEqual([{ id: "NARU", quantity: 1 }]);
 		});
 	});
 });
