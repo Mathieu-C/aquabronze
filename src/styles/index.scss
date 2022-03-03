@@ -1,7 +1,10 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter.ttf');
-}
-
 @import 'variables';
+
 @import 'scaffolding';
+
+@import 'layout';
+@import 'products';
+
+@import 'product';
+@import 'summary';
+@import 'discounts';

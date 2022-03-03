@@ -1,0 +1,19 @@
+.page {
+  display: inline-flex;
+  width: 100%;
+  width: 100vw;
+}
+
+.cart {
+  min-height: 100vh;
+  padding: 1em 2em;
+  width: 75%;
+}
+
+.summary {
+  background: $grey-light;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 35%;
+}
