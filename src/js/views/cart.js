@@ -21,6 +21,9 @@ const cartView = (function() {
             -
           </button>
 					<input
+						min="0"
+						readonly
+						step="1"
             class="product__quantity-input"
             data-productid="${product.id}"
             type="number"
