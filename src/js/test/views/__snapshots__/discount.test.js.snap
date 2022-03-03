@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`discount view render handles multiple active discounts 1`] = `
+"
+      <li class=\\"discounts__item\\">
+        <span>2x1 Goku POP offer</span>
+        <span>-5 €</span>
+      </li>
+    
+      <li class=\\"discounts__item\\">
+        <span>x6 Naruto POP offer</span>
+        <span>-6 €</span>
+      </li>
+    "
+`;
+
+exports[`discount view render reflects the active discounts 1`] = `
+"
+      <li class=\\"discounts__item\\">
+        <span>2x1 Goku POP offer</span>
+        <span>-5 €</span>
+      </li>
+    "
+`;
